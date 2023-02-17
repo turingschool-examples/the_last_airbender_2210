@@ -2,6 +2,7 @@
 <hr>
 
   <% @characters.each do |character| %>
+    <div class='character'>
       <% if character.img_url %>
         <%= image_tag character.img_url %>
       <% end %><br>
@@ -18,5 +19,6 @@
         Enemies: None
       <% end %><br>
       Affiliation: <%= character.affiliation %>
+    </div>
     <hr>
   <% end %>
