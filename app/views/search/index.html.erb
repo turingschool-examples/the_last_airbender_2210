@@ -1,5 +1,5 @@
 <h1>Characters</h1>
-
+<p>Characters in Nation: <%= @total_characters_by_nation.count %></p>
 <% @characters.each do |character| %>
     <h3><%= character.name %></h3>
     <p><%= image_tag "#{character.photo_url}" %></p>
