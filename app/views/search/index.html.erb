@@ -1,0 +1,18 @@
+<h2><%= @nation %></h2> 
+
+<% @characters.each do |character| %>
+    <h4>Name: <%= character.name %></h4>
+    <%= image_tag "#{character.photo_url}" %>
+    <p>Affiliation: <%= character.affiliation %></p>
+    <h5>Allies:</h5>
+    <% character.allies.each do |ally| %> 
+        <p><%= ally %></p>
+    <% end %>
+    <h5>Enemies:</h5>
+    <% character.enemies.each do |enemy| %> 
+        <p><%= enemy %></p>
+    <% end %>
+<br>
+<br>
+<br>
+<% end %>
