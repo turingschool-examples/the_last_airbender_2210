@@ -24,8 +24,9 @@ RSpec.describe 'Search Index' do
     click_button("Search For Members")
   end
 
-  it 'displays title' do
+  it 'displays title and total count members for nation' do
     expect(page).to have_content('Search Results')
+    expect(page).to have_content("Total Members: 97")
   end
 
   it 'lists members of nation selected' do

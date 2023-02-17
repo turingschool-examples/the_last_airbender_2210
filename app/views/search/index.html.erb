@@ -1,5 +1,6 @@
 <h1>Search Results</h1>
 
+<%= "Total Members: #{@nation_members_total.count}" %>
 <% @nation_members.each do |member| %>
   <div id=<%= "member-id-#{member.id}" %>>
     <% if member.photo_url %>
