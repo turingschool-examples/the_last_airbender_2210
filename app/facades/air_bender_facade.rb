@@ -1,13 +1,13 @@
 class AirBenderFacade
-  def nation_characters(nation)
+  def self.nation_characters(nation)
     raw_nation_characters(nation).map do |character|
-      Character.new(nation)
+      Character.new(character)
     end
   end
 
   private
 
-  def raw_nation_characters(nation)
-    AirBenderService.parse_nation_characters(nation)
+  def self.raw_nation_characters(nation)
+    AirBenderService.parse_nation_characters_response(nation)
   end
 end
