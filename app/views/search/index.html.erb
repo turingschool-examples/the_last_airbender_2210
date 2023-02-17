@@ -1,13 +1,25 @@
 
 <ul style="list-style: none;">
    <%  @nation_details.each do |character| %>
-   <% binding.pry %>
-   <li> - Member Name: <%= character.name %> </li>
+
+   <li> Member Name: <%= character.name %> </li>
    <li>  (and their photo, if they have one)  
-   <%= character.photo %> 
+
                               </li>
-    <li>- Allies: or "None": <%= character %> </li>
-    <li>- Enemies: or "None": <%= character %> </li>
-    <li>- Affiliations: <%= character.affiliation %> </li>
+    <li> Allies: <% if character.allies.count == nil %>
+                        None
+                    <% else %>
+                    <%= character.allies.join(', ') %>
+                    <% end %> </li>
+    <li> Enemies: <% if character.enemies.count == nil %>
+                        None
+                    <% else %>
+                    <%= character.enemies.join(', ') %>
+                    <% end %> </li>
+    
+    </li>
+    <li> Affiliations: <%= character.affiliation %> </li>
+    <br>
+    
     <% end %>
 </ul>
