@@ -9,6 +9,7 @@ RSpec.describe AvatarService, type: :model do
       expect(response[0]).to have_key(:allies)
       expect(response[0]).to have_key(:enemies)
       expect(response[0]).to have_key(:affiliation)   
+      expect(response[0]).to have_key(:photoUrl)   
     end
   end
 end
