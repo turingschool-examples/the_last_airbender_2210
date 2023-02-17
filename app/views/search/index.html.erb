@@ -1,0 +1,33 @@
+<h1>Search Results for '<%= @query %>'</h1>
+<hr>
+Total Members: <%= @members.count %>
+<hr>
+<% @first_25_members.each do |member| %>
+  <p>
+  <h2><%= member.name %></h2>
+  <% if member.photo_url %>
+    <%= image_tag member.photo_url %><br>
+  <% end %>
+  <h3>Allies:</h3>
+  <% if member.allies %>
+    <% member.allies.each do |ally| %>
+      <%= ally %><br>
+    <% end %>
+  <% else %>
+    None<br>
+  <% end %>
+  <h3>Enemies:</h3>
+  <% if member.enemies %>
+    <% member.enemies.each do |enemy| %>
+      <%= enemy %><br>
+    <% end %>
+  <% else %>
+    None<br>
+  <% end %>
+  <h3>Affiliation:</h3>
+  <%= member.affiliation %><br>
+<p>
+<hr>
+<p>
+<% end %>
+
