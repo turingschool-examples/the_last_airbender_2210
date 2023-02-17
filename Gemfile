@@ -28,6 +28,7 @@ group :test do
   gem 'launchy'
   gem 'simplecov'
   gem 'webmock'
+  gem 'pry-rails'
   # gem 'vcr'
 end
 
