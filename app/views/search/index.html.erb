@@ -1,0 +1,9 @@
+<h1>Characters</h1>
+
+<% @characters.each do |character| %>
+    <h3><%= character.name %></h3>
+    <p><%= image_tag "#{character.photo_url}" %></p>
+    <p>Allies: <%= character.allies %></p>
+    <p>Enemies: <%= character.enemies %></p>
+    <p>Affiliation: <%= character.affiliation %></p>
+<% end %>
