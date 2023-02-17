@@ -7,15 +7,16 @@ RSpec.describe 'Search Index' do
     click_button 'Search For Members'
 
     expect(current_path).to eq(search_path)
-    expect(page).to have_content('Total number of people in the Fire Nation: 97')
-    expect(page).to have_css('.fire', count: 25)
+    save_and_open_page
+    expect(page).to have_content('Total number of people in the fire+nation: 396')
+    expect(page).to have_css('.member', count: 25)
 
-    within(first('.food')) do
+    within(first('.member')) do
       expect(page).to have_css('.name')
       expect(page).to have_css('.photo')
       expect(page).to have_css('.allies')
       expect(page).to have_css('.enemies')
-      expect(page).to have_css('.affiliations')
+      expect(page).to have_css('.affiliation')
     end
   end
 end
