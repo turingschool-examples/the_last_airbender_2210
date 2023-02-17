@@ -1,5 +1,5 @@
 class MemberService
-  def self.get_all_members(nation)
+  def self.get_all_members_by_nation(nation)
     response = conn.get("/api/v1/characters?affiliation=#{nation}")
     JSON.parse(response.body, symbolize_names: true)
   end

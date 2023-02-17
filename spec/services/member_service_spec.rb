@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MemberService do
   it 'can return a response with members by nation' do
     
-    members_data = MemberService.get_all_members("Fire Nation")
+    members_data = MemberService.get_all_members_by_nation("Fire Nation")
 
     expect(members_data).to be_an(Array)
 
