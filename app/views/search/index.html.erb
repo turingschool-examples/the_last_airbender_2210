@@ -1,0 +1,21 @@
+<h2>Members</h2>
+
+
+<h3>Total population: <%= @all_members.count %></h3>
+
+<ol id='member'>
+  <% @twenty_five_members.each do |member| %>
+  <li><p><b>Name:</b> <%= member.name %></li>
+  <p><img src = <%= member.photo %>>
+  <p><b>Allies:</b> <% if member.allies[0].nil? %> 
+                    <%= "None" %>
+            <% else%>
+            <%= member.allies[0] %>
+            <% end %>
+  <p><b>Enemies:</b> <% if member.enemies[0].nil? %> 
+              <%= "None" %>
+            <% else %>
+            <%= member.enemies[0] %>
+            <% end %>
+  <% end %>
+ </ol> 
