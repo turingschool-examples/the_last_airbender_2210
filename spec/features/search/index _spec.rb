@@ -1,12 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe 'Search Index' do
-  it 'shows all characters for a given nation' do
+  it 'Is able to search from the welcome page' do
     visit root_path
     select("Fire Nation", from: "nation")
     click_button "Search For Members"
 
     expect(current_path).to eq(search_path)
+  end
+
+  it 'displays all character information for a given nation' do
+    visit root_path
+    select("Fire Nation", from: "nation")
+    click_button "Search For Members"
 
     within("#character_5cf5679a915ecad153ab68cc") do
       expect(page).to have_content('Allies: Fire Nation')
