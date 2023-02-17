@@ -1,6 +1,8 @@
 <%= @characters.count %>
 
 <% @characters.each do |character|%>
+  <%# <%= image_tag(character[:photoUrl])%> %>
+  <p><%= character[:name] %></p>
   <% if character[:allies] == 0 %>
     <p>Allies:<%=   "None" %></p>
   <% else %>
@@ -11,5 +13,5 @@
   <% else %>
     <p>Enemies:<%= character[:enemies] %></p>
   <% end %>
-  <p>Affiliation:q<%= character[:affiliation] %></p>
+  <p>Affiliation:<%= character[:affiliation] %></p>
 <% end %>

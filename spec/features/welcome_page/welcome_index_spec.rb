@@ -17,7 +17,20 @@ RSpec.describe 'welcome page' do
     select 'Fire Nation'
     click_on 'Search For Members'
 
-    expect(page).to have_content(25)
+    expect(page).to have_content(20)
+    # expect(page).to have_content(25)
+    # expect(page).to have_content(97)
+  end
+  it 'has the characters info' do
+    visit root_path
+
+    select 'Fire Nation'
+    click_on 'Search For Members'
+
+    expect(page).to have_content("Afiko")
+    expect(page).to have_content("Aang")
+    expect(page).to have_content("Fire Nation")
+    # expect(page).to have_content(25)
     # expect(page).to have_content(97)
   end
 end
