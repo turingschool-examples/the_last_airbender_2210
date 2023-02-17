@@ -31,8 +31,12 @@ RSpec.describe 'search index' do
     it 'should display the characters affiliations' do
       visit search_path
 
-      expect(page).to have_content('Fire Nation')
-      expect(page).to have_content('Fire Nation military')
+      # within('#aff') do
+        expect(page).to have_content('Fire Nation')
+        expect(page).to have_content('Fire Nation military')
+        # expect(page).to_not have_content('Water Tribe')
+        # expect(page).to_not have_content('Earth Kingdom')
+      # end
     end
   end
 end
