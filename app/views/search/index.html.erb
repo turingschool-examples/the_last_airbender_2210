@@ -1,10 +1,29 @@
 <h1>Search Results for <%= @query %></h1>
-
+Total Members: <%= @members.count %>
 <% @members.each do |member| %>
-  <%= member.name %>
-  <%= member.photo_url %>
-  <%= member.allies %>
-  <%= member.enemies %>
-  <%= member.affiliation %>
+  <p>
+  <h2><%= member.name %></h2>
+  <% if member.photo_url %>
+    <%= member.photo_url %><br>
+  <% end %>
+  <h3>Allies:</h3>
+  <% if member.allies %>
+    <% member.allies.each do |ally| %>
+      <%= ally %><br>
+    <% end %>
+  <% else %>
+    <%= "None" %><br>
+  <% end %>
+  <h3>Enemies:</h3>
+  <% if member.enemies %>
+    <% member.enemies.each do |enemy| %>
+      <%= enemy %><br>
+    <% end %>
+  <% else %>
+    <%= "None" %><br>
+  <% end %>
+  <h3>Affiliation:</h3>
+  <%= member.affiliation %><br>
+<p></p>
 <% end %>
 
