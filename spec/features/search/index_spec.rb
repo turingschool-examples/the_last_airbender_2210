@@ -9,7 +9,7 @@ RSpec.describe 'The Search Results Page', type: :feature do
 
       click_button('Search For Members')
       expect(current_path).to eq('/search')
-
+      save_and_open_page
       expect(page).to have_content("fire+nation")
       expect(page).to have_content("Azula")
     end

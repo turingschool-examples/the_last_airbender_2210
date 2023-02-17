@@ -1,5 +1,7 @@
-<h1>Search Results for <%= @query %></h1>
+<h1>Search Results for '<%= @query %>'</h1>
+<hr>
 Total Members: <%= @members.count %>
+<hr>
 <% @first_25_members.each do |member| %>
   <p>
   <h2><%= member.name %></h2>
@@ -12,7 +14,7 @@ Total Members: <%= @members.count %>
       <%= ally %><br>
     <% end %>
   <% else %>
-    <%= "None" %><br>
+    None<br>
   <% end %>
   <h3>Enemies:</h3>
   <% if member.enemies %>
@@ -20,11 +22,12 @@ Total Members: <%= @members.count %>
       <%= enemy %><br>
     <% end %>
   <% else %>
-    <%= "None" %><br>
+    None<br>
   <% end %>
   <h3>Affiliation:</h3>
   <%= member.affiliation %><br>
 <p>
+<hr>
 <p>
 <% end %>
 
