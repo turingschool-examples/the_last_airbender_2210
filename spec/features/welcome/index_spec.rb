@@ -3,8 +3,10 @@ require 'rails_helper'
 RSpec.describe "welcome" do
   it 'searches for members' do
     visit '/'
-    expect(page).to have_content ("Search For Members")
-    
+    expect(page).to have_button ("Search For Members")
+    select "Fire Nation", from: "nation"
+    click_button "Search For Members"
+    expect(current_path).to eq('/search')
   end
 end
 
