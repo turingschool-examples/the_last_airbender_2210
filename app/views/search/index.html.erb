@@ -1,0 +1,15 @@
+<%= @characters.count %>
+
+<% @characters.each do |character|%>
+  <% if character[:allies] == 0 %>
+    <p>Allies:<%=   "None" %></p>
+  <% else %>
+    <p>Allies:<%= character[:allies] %></p>
+  <% end%>
+  <% if character[:enemies] == 0 %>
+    <p>Enemies:<%= "None" %></p>
+  <% else %>
+    <p>Enemies:<%= character[:enemies] %></p>
+  <% end %>
+  <p>Affiliation:q<%= character[:affiliation] %></p>
+<% end %>

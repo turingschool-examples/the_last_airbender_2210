@@ -10,4 +10,14 @@ RSpec.describe 'welcome page' do
 
     expect(current_path).to eq('/search')
   end
+
+  it 'has the amount of characters shown' do
+    visit root_path
+
+    select 'Fire Nation'
+    click_on 'Search For Members'
+
+    expect(page).to have_content(25)
+    # expect(page).to have_content(97)
+  end
 end
