@@ -14,8 +14,8 @@ RSpec.describe Member do
     member = Member.new(attributes)
 
     expect(member.name).to eq("Afiko")
-    expect(member.allies[0]).to eq("Fire Nation")
-    expect(member.enemies[0]).to eq("Aang")
+    expect(member.allies).to eq("Fire Nation")
+    expect(member.enemies).to eq("Aang")
     expect(member.photo).to eq("https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128")
     expect(member.affiliation).to eq("Fire Nation")
 
