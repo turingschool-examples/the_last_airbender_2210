@@ -12,9 +12,9 @@ Using an Airbender API provided to you by your instructors, retrieve a sampling 
 
 ### Versions
 
-Rails 5.2.4.3
+Rails 5.2.8
 
-Ruby 2.5.3
+Ruby 2.7.4
 
 ### Setup
 
