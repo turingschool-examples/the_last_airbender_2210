@@ -2,25 +2,27 @@
 
 Total Members: <%= @members_count %>
 
-<h2>The first 25 members:</h2>
+<h2>The First 25 Members:</h2>
 
 <% @members.each do |member| %>
-  <h3><%= member.name %></h3>
-  <img src=<%= member.photo %> ><br>
-  <p>Allies: <% if member.allies.any? %></p>
-    <% member.allies.each do |ally| %>
-      <%= ally %>
+  <div id="member-<%= member.id %>">
+    <h3><%= member.name %></h3>
+    <img src=<%= member.photo %> ><br>
+    <p>Allies: <% if member.allies.any? %></p>
+      <% member.allies.each do |ally| %>
+        <p><%= ally %></p>
+      <% end %>
+    <% else %>
+      None
     <% end %>
-  <% else %>
-    None
-  <% end %>
-    <p>Enemies: <% if member.enemies.any? %></p>
-    <% member.enemies.each do |enemy| %>
-      <%= enemy %>
+      <p>Enemies: <% if member.enemies.any? %></p>
+      <% member.enemies.each do |enemy| %>
+        <p><%= enemy %></p>
+      <% end %>
+    <% else %>
+      None
     <% end %>
-  <% else %>
-    None
-  <% end %>
-  <p>Affiliations: <%= member.affiliation %></p>
+    <p>Affiliations: <%= member.affiliation %></p>
+  </div>
 <% end %>
 

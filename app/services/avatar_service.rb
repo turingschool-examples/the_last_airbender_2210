@@ -8,8 +8,8 @@ class AvatarService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.get_nation_members_response(amount)
-    response = conn.get("/api/v1/characters?affiliation=Fire+Nation&perPage=#{amount}")
+  def self.get_nation_members_response(nation, amount)
+    response = conn.get("/api/v1/characters?affiliation=#{nation}&perPage=#{amount}")
     parse(response)
   end
 
