@@ -1,0 +1,13 @@
+
+<ul style="list-style: none;">
+   <%  @nation_details.each do |character| %>
+   <% binding.pry %>
+   <li> - Member Name: <%= character.name %> </li>
+   <li>  (and their photo, if they have one)  
+   <%= character.photo %> 
+                              </li>
+    <li>- Allies: or "None": <%= character %> </li>
+    <li>- Enemies: or "None": <%= character %> </li>
+    <li>- Affiliations: <%= character.affiliation %> </li>
+    <% end %>
+</ul>
