@@ -1,0 +1,7 @@
+<h1><%=@nation%></h1>
+Number of members: <%= @members.count %><br>
+<p> 
+<% @members.each.with_index(1) do |m, i| %>
+<%= "##{i}: #{m[:name]}"%><br>
+<% end %>
+</p>
