@@ -20,14 +20,16 @@ RSpec.describe "search results page" do
   end
 
   it 'displays the total number of members of the fire nation' do
+    expect(page).to have_content("Welcome to the fire nation")
     expect(page).to have_content("Nation Members: 97")
   end
 
   it 'should display the first 25 members of the fire nation with their details' do
     within "#members" do
-      
+      expect(page).to have_css("#member-Afiko ~ #member-Azula")
+      expect(page).to have_css("#member-Azulon ~ #member-Bujing")
+      expect(page).to have_css("#member-Chey ~ #member-Druk")
     end
-
   end
 
 
