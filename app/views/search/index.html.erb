@@ -3,7 +3,7 @@
 
 <h2>First <%= @first_25_members.size %> members: </h2>
 <% @first_25_members.each do |member| %>
-  <div id="member">
+  <div id="member_<%= member.name %>">
     <h3>Name: <%= member.name %></h3>
     <p><img src=<%= member.image %>></p>
     <p>Allies: <%= member.allies_check %></p>

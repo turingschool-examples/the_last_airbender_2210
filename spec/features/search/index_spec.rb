@@ -22,11 +22,18 @@ RSpec.describe 'Search results page' do
 
       # expect(page.all('Name').count).to eq 25
 
-      within first "#member" do 
+      within "#member_Afiko" do 
         expect(page).to have_content("Name: Afiko")
         expect(page).to have_content("Allies: Fire Nation")
         expect(page).to have_content("Enemies: Aang")
         expect(page).to have_content("Affiliation: Fire Nation")
+      end
+
+      within "#member_Elua" do 
+        expect(page).to have_content("Name: Elua")
+        expect(page).to have_content("Allies: Ozai")
+        expect(page).to have_content("Enemies: None")
+        expect(page).to have_content("Affiliation: Fire Nation Fire Nation Royal Family")
       end
     end
   end
