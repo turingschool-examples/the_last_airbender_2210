@@ -4,7 +4,7 @@ class AvatarService
   end
 
   def self.get_characters_by_nation(nation)
-    parse_json(conn.get("api/v1/characters?affiliation=#{nation}"))
+    parse_json(conn.get("api/v1/characters?affiliation=#{nation}&perPage=497"))
   end
 
   def self.parse_json(response)

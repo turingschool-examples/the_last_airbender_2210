@@ -1,0 +1,17 @@
+<ul>
+  <% @characters.each_with_index do |character, i| %>
+    <li class='character' id=<%=i%>>
+      <h4><%= character.name %></h4>
+      <% if i < 25 %>
+      <ul class='detailed_info'>
+        <% if character.photo_url %>
+          <%= image_tag character.photo_url %>
+        <% end %>
+        <li>Allies: <%= character.allies %></li>
+        <li>Enemies: <%= character.enemies %></li>
+        <li>Affiliations: <%= character.affiliations %></li>
+      </ul>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
