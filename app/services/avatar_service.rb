@@ -11,4 +11,6 @@ class AvatarService
   def self.parse(response)
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  private_class_method :conn, :parse
 end
