@@ -5,7 +5,7 @@ class SearchController < ApplicationController
     response = conn.get("characters?affiliation=Fire+Nation")
     parse = JSON.parse(response.body, symbolize_names: true)
     @total_members = parse.count
-    @character_list = parse.first(25)
+    @member_list = parse.first(25)
     @nation = @searched_nation.split("+").map(&:capitalize).join(' ')
   end
 end

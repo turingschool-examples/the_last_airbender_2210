@@ -7,6 +7,7 @@ RSpec.describe "welcome" do
     select "Fire Nation", from: "nation"
     click_button "Search For Members"
     expect(current_path).to eq('/search')
+    
   end
 end
 
