@@ -1,16 +1,24 @@
 <h1><%= @nation %> Members </h1>
-<h3>There are <%= @total_members %> Total Members of <%= @nation %> </h2>
+<h2>There are <%= @total_members %> Total Members of <%= @nation %> </h2>
+<br>
 <p> <% @member_list.each do |member| %> </p>
-  <p> Name: <%= member[:name] %> </p>
+  <h3> Name: <%= member[:name] %> </h3>
+    <% if member[:photoUrl].present? %>
+      <img src= "<%= member[:photoUrl] %>">
+    <% else %>
+      <h4> (Photo Unavailable) </h4>
+    <% end %>
     <% if member[:allies] == [] %>
       <p> Allies: None </p>
     <% else %>
-      <p> Allies: <%= member[:allies] %> </p>
+      <p> Allies: <%= member[:allies].join(", ") %> </p>
     <% end %>
-  <% if member[:enemies] == [] %>
+    <% if member[:enemies] == [] %>
       <p> Enemies: None </p>
     <% else %>
-      <p> Enemies: <%= member[:enemies] %> </p>
+      <p> Enemies: <%= member[:enemies].join(", ") %> </p>
     <% end %>
+  <p> Affiliation: <%= member[:affiliation] %> </p>
+
   <br>
 <% end %>
