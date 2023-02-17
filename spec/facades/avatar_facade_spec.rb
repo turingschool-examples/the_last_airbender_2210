@@ -6,6 +6,7 @@ RSpec.describe AvatarFacade do
       it 'returns an array of member objects' do
         @facade = AvatarFacade.new
         members = @facade.members
+        expect(members.length).to be <= 25
         expect(members).to be_a Array
         expect(members.first).to be_a Character
       end

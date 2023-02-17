@@ -3,7 +3,7 @@ class AvatarService
     parse(conn.get(uri))
   end
 
-  private 
+  private
 
   def conn
     Faraday.new(conn_params)
@@ -12,6 +12,8 @@ class AvatarService
   def conn_params
     {
       url: base_uri,
+      params: { perPage: 25,
+                page: 1 }
     }
   end
 
