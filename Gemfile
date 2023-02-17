@@ -27,6 +27,7 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'simplecov', require: false
   gem 'webmock'
   # gem 'vcr'
 end
