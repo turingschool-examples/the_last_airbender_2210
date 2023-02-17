@@ -1,0 +1,11 @@
+<h1> Fire Nation Members </h1>
+
+<% @nation.each do |n| %>
+Name: <%= n[:name] %><br>
+Photo: <%= n[:photoUrl] %><br>
+Allies: <%= n[:allies] %><br>
+Enemies: <%= n[:enemies] %><br>
+<div id='aff'>
+Affiliation: <%= n[:affiliation] %><br><br>
+</div>
+<% end %>
