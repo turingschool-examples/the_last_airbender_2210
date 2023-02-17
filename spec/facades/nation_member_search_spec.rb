@@ -4,7 +4,7 @@ RSpec.describe 'MemberSearchFacade' do
   it 'should call the facade and retrieve search results' do
     search_nation = "fire+nation"
 
-    results = MemberSearchFacade(search_nation)
+    results = MemberSearchFacade.member_search(search_nation)
 
     expect(results).to be_an Array
 
