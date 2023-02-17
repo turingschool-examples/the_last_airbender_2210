@@ -7,8 +7,16 @@ class Member
   
   def initialize(data)
     @name = data[:name]
-    @allies = (data[:allies] ||= "None")
-    @enemies = (data[:enemies] ||= "None")
+    @allies = if data[:allies] == []
+                ["None"]
+              else
+                data[:allies]
+              end
+    @enemies =  if data[:enemies] == []
+                  ["None"]
+                else
+                  data[:enemies]
+                end
     @affiliation = data[:affiliation]
     @photo_url = data[:photoUrl]
 
