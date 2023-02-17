@@ -1,2 +1,13 @@
 <h1><%= @nation %></h1>
 <p>Found <%= @all_members.size %> <%= @nation %> members.</p>
+
+<h2>First <%= @first_25_members.size %> members: </h2>
+<% @first_25_members.each do |member| %>
+  <div id="member">
+    <h3>Name: <%= member[:name] %></h3>
+    <p><img src=<%= member[:photoUrl] %>></p>
+    <p>Allies: <%= member[:allies].join(', ') %></p>
+    <p>Enemies: <%= member[:enemies].join(', ') %></p>
+    <br>
+  </div>
+<% end %>
