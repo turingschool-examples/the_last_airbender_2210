@@ -1,0 +1,20 @@
+<h1><%=@nation%></h1>
+Number of members: <%= @members.count %><br>
+<p> 
+<% @members.each.with_index(1) do |m, i| %>
+  <p>
+  <%= "##{i}: #{m[:name]}"%><br>
+  <% if i <= 20 %>
+    <img src=<%=m[:photoUrl]%> alt=<%=m[:name]%>><br>
+    Allies:
+    <% m[:allies].each do |a| %>
+      <%= a %>
+    <% end %><br>
+    Enemies:
+    <% m[:enemies].each do |e| %>
+      <%= e %>
+    <% end %>
+  <% end %>
+  </p>
+<% end %>
+</p>
