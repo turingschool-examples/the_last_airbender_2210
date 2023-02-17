@@ -4,7 +4,7 @@ Total Members: <%= @members.count %>
   <p>
   <h2><%= member.name %></h2>
   <% if member.photo_url %>
-    <%= member.photo_url %><br>
+    <%= image_tag member.photo_url %><br>
   <% end %>
   <h3>Allies:</h3>
   <% if member.allies %>
