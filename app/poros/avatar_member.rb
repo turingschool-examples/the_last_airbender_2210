@@ -2,7 +2,7 @@ class AvatarMember
 
   attr_reader :id,
               :name,
-              :affiliations,
+              :affiliation,
               :enemies,
               :allies,
               :photo_url
@@ -10,7 +10,7 @@ class AvatarMember
   def initialize(data)
     @id          = data[:_id]
     @name        = data[:name]
-    @affiliations = data[:affiliation]
+    @affiliation = data[:affiliation]
     @enemies     = data[:enemies]
     @allies      = data[:allies]
     @photo_url   = data[:photoUrl]

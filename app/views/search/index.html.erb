@@ -8,19 +8,25 @@
     <% end %>
     <%= "Name: #{member.name}" %><br>
     <% unless member.allies.empty? %>
-      <%= "Allies: #{member.allies}" %><br>
+      Allies: 
+      <% member.allies.each do |ally| %>
+        <%= ally %>
+      <% end %><br>
     <% else %>
       Allies: None<br>
     <% end %>
     <% unless member.enemies.empty? %>
-      <%= "Enemies: #{member.enemies}" %><br>
+      Enemies: 
+      <% member.enemies.each do |enemy| %>
+        <%= enemy %>
+      <% end %><br>
     <% else %>
       Enemies: None<br>
     <% end %>
-    <% unless member.affiliations.empty? %>
-      <%= "Affiliations: #{member.affiliations}" %>
+    <% if member.affiliation %>
+      <%= "Affiliation: #{member.affiliation}" %>
     <% else %>
-      Affiliations: None<br>
+      Affiliation: None<br>
     <% end %>
   <div>
 <% end %>
