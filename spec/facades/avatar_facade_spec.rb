@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Avatar Facade" do
   it "will return a list of nation members based on search params" do
-    data = AvatarFacade.get_nation_members(25)
+    data = AvatarFacade.get_nation_members("fire+nation", 25)
     member = data.first
     expect(data).to be_a(Array)
     expect(data.count).to eq(25)
