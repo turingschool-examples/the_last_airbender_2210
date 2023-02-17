@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'search page' do
   before(:each) do
-    
   end
 
   it 'is linked from the landing page' do
@@ -19,7 +18,7 @@ RSpec.describe 'search page' do
 
     select 'Fire Nation', from: :nation
     click_on 'Search For Members'
-    
+
     expect(page).to have_content('Population of Fire nation: 97')
   end
 end

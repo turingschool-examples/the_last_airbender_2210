@@ -4,7 +4,7 @@ class Character
               :allies,
               :enemies,
               :affiliation
-  
+
   def initialize(character_data)
     @name = character_data[:name]
     @img_url = character_data[:photoUrl]
