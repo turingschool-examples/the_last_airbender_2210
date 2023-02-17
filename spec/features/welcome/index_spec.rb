@@ -10,6 +10,8 @@ RSpec.describe "welcome" do
     expect(page).to have_content("Name: Afiko")
     expect(page).to_not have_content("Name: Kya (pilot)")
     expect(page).to have_content("There are 20 Total Members of Fire Nation")
+    
+    visit '/'
   end
 end
 
