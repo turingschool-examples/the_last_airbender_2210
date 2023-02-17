@@ -1,0 +1,24 @@
+<p>Population: <%= @members.count %></p>
+
+<% @members.first(25).each do |member, index| %>
+  <div class='character_details'>
+    <% if member.photo %>
+      <img id=<%= member.id %> src=<%= member.photo %>>
+    <% end %>
+    <p><%= member.name %></p>
+
+    <% if member.allies.count > 0 %>
+      <p>Allies: <%= member.allies.join(', ') %></p>
+    <% else %>
+      <p>Allies: None</p>
+    <% end %>
+    
+    <% if member.enemies.count > 0 %>
+      <p>Enemies: <%= member.enemies.join(', ') %></p>
+    <% else %>
+      <p>Enemies: None</p>
+    <% end %>
+
+    <p>Affiliation: <%= member.affiliation %></p>
+  </div>
+<% end %>
