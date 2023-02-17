@@ -12,8 +12,7 @@ class AvatarService
   def conn_params
     {
       url: base_uri,
-      params: { perPage: 25,
-                page: 1 }
+      params: { perPage: 0 }
     }
   end
 

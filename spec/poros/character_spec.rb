@@ -11,8 +11,8 @@ RSpec.describe Character do
   it 'exists and has readable attributes' do
     expect(character).to be_a Character
     expect(character.name).to eq 'test' 
-    expect(character.allies).to eq ["friend", 'other'] 
-    expect(character.enemies).to eq ['foe', 'other_foe']
+    expect(character.allies).to eq 'friend, other' 
+    expect(character.enemies).to eq 'foe, other_foe'
     expect(character.photoUrl).to eq '/photo_location' 
     expect(character.affiliation).to eq 'Water Tribe' 
   end

@@ -1,5 +1,14 @@
 <h1>Members</h1>
 
+<p>Total Population: <%=@count%></p>
 <div id='member_details'>
-  
+  <% @members.each_with_index do |member, index| %>  
+    <div id=<%= "member_#{index}" %>>
+      <p>Name: <%= member.name %></p>
+      <p>Allies: <%= member.allies || "None" %></p>
+      <p>Enemies: <%= member.enemies || "None" %></p>
+      <p>Affiliations: <%= member.affiliation || "None" %></p>
+      <p><%= image_tag member.photoUrl if member.photoUrl %></p>
+    </div>
+  <% end %>
 </div>
