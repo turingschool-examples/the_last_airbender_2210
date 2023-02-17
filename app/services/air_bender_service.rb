@@ -8,6 +8,6 @@ class AirBenderService
   end
 
   def self.nation_characters_response(nation)
-    connection.get("?affiliation=#{nation}")
+    connection.get("?affiliation=#{nation}&perPage=25&page=1")
   end
 end

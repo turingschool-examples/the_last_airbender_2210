@@ -9,7 +9,7 @@ RSpec.describe 'Search Index' do
     expect(current_path).to eq(search_path)
   end
 
-  it 'displays all character information for a given nation' do
+  it 'displays all character information for each character' do
     visit root_path
     select("Fire Nation", from: "nation")
     click_button "Search For Members"
@@ -29,5 +29,21 @@ RSpec.describe 'Search Index' do
       expect(page).to have_content('Affiliations: Fire Nation')
       expect(page.find('img')[:src]).to eq("https://vignette.wikia.nocookie.net/avatar/images/1/16/Ember_Island_Players.png/revision/latest?cb=20130722113209")
     end
+  end
+
+  it 'displays a count of all characters for a specific nation' do
+    visit root_path
+    select("Fire Nation", from: "nation")
+    click_button "Search For Members"
+
+    expect(page).to have_content('Character Count: 97')
+  end
+
+  it 'displays only the first 25 characters' do
+    visit root_path
+    select("Fire Nation", from: "nation")
+    click_button "Search For Members"
+
+    expect(page).to have_content('Allies', count: 25)
   end
 end
