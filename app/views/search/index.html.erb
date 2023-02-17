@@ -1,0 +1,22 @@
+<p>Population of <%= @nation %>: <%= @population %></p>
+<hr>
+
+  <% @characters.each do |character| %>
+      <% if character.img_url %>
+        <%= image_tag character.img_url %>
+      <% end %><br>
+      Name: <%= character.name %>
+      <br>
+      <% if character.allies != [] %>
+        Allies: <%= character.allies.join(', ') %>
+      <% else %>
+        Allies: None
+      <% end %><br>
+      <% if character.enemies != [] %>
+        Enemies: <%= character.enemies.join(', ') %>
+      <% else %>
+        Enemies: None
+      <% end %><br>
+      Affiliation: <%= character.affiliation %>
+    <hr>
+  <% end %>
