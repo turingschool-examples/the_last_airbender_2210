@@ -7,8 +7,10 @@
 <ol>
   <% @members.each do |member| %>
     <section id="member-<%=member.id%>">
-    
-      <li><%= member.name %>  #image_tag(member.photo) </li>
+      <li><%= member.name %> 
+        <ul><% if member.photo %>
+          <%= image_tag(member.photo) %></li>
+        <% end %></ul>
         <ul>Allies: <%member.allies.each do |ally| %>
           <%= ally %>, 
         <% end %></ul>
