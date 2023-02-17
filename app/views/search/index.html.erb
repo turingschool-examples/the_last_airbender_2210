@@ -1,0 +1,44 @@
+<h1><%= params[:nation].capitalize.gsub("+", " ") %> Members:</h1>
+
+<h3>Total Members: <%= @nation_members.count %></h3>
+
+<h3>First 25 Member Details:</h3>
+
+<% @nation_members[0..24].each.with_index do |member, index|%>
+  <div id="member-<%=index+1%>" style='border:1px solid black'>
+    <h3><%= member.name %></h3>
+
+    <div id='photo'>
+    <% if !member.photo_url.nil? %>
+      <%= image_tag("#{member.photo_url}") %>
+    <% else %>
+      <p>No Photo :(</p>
+    <% end %>
+    </div>
+
+    <h3>Allies</h3>
+      <ul>
+        <% if member.allies.empty? %>
+          <li>None</li>
+        <%else%>
+          <% member.allies.each do |ally| %>
+            <li><%= ally %></li>
+          <% end%>
+        <% end %>
+      </ul>
+    <h3>Enemies</h3>
+      <ul>
+        <% if member.enemies.empty? %>
+          <li>None</li>
+        <%else%>
+          <% member.enemies.each do |enemy| %>
+            <li><%= enemy %></li>
+          <% end%>
+        <% end %>
+      </ul>
+    <h3>Affiliation</h3>
+    <ul>
+    <li><%= member.affiliation %></li>
+    </ul>
+  </div>
+<% end %>
