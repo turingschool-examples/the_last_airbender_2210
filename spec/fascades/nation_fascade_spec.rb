@@ -12,11 +12,11 @@ RSpec.describe NationFascade do
       character = nation.first
 
       expect(character).to be_a(Character)
-      expect(character.name).to eq('46th Earth King')
-      expect(character.photo).to eq('https://vignette.wikia.nocookie.net/avatar/images/5/51/46th_Earth_King.png/revision/latest?cb=20130627160441')
-      expect(character.allies).to eq('Royal Earthbender Guards')
-      expect(character.enemies).to eq('Chin')
-      expect(character.affiliation).to eq(' Earth Kingdom Earth Kingdom Royal Family')
+      expect(character.name).to eq('Afiko')
+      expect(character.photo).to eq('https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128')
+      expect(character.allies).to eq(['Fire Nation'])
+      expect(character.enemies).to eq(['Aang'])
+      expect(character.affiliation).to eq('Fire Nation')
     end
   end
 end
