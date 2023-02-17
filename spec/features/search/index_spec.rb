@@ -21,6 +21,7 @@ RSpec.describe 'Search results page' do
       expect(current_path).to eq '/search'
 
       # expect(page.all('Name').count).to eq 25
+      expect(page).to have_content("First 25 members:")
 
       within "#member_Afiko" do 
         expect(page).to have_content("Name: Afiko")

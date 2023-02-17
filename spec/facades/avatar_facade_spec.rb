@@ -6,6 +6,9 @@ RSpec.describe AvatarFacade do
 
     expect(characters).to be_an Array 
     expect(characters.count).to eq 97
+    characters.each do |char|
+      expect(char).to be_an_instance_of(Character)
+    end
   end
 
   it 'can return the first 25 characters' do 
