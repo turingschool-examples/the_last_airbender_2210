@@ -8,6 +8,9 @@ class SearchController < ApplicationController
     response = conn.get("/api/v1/characters?perPage=999&page=1&affiliation=#{@nation}")
 
     json = JSON.parse(response.body, symbolize_names: true)
-    @members = []
+    @member_count = json.count
+    # require 'pry'; binding.pry
+    @members = json.first(25)
+    # @members = []
   end
 end

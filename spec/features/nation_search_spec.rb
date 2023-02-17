@@ -8,11 +8,11 @@ RSpec.describe 'nation search' do
 
     expect(current_path).to eq('/search')
 
-    expect(page).to have_content('Total people who live here: 94')
+    expect(page).to have_content('Total people who live here: 97')
 
     expect(page).to have_css('.members', count: 25)
 
-    within(first('.member')) do
+    within(first('.members')) do
       expect(page).to have_css('.name')
       expect(page).to have_css('.allies')
       expect(page).to have_css('.enemies')
