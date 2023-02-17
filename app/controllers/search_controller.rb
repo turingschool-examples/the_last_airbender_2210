@@ -1,6 +1,8 @@
 class SearchController < ApplicationController
   def index
-    require 'pry'; binding.pry
-    @characters = AvatarFacade.top_25_characters_by_affiliation(params[:nation])
+    @characters = AvatarFacade.characters_by_affiliation(params[:nation])
+    @affiliation = @characters.first.affiliation
+    # require 'pry'; binding.pry
+    # @total_character_count = AvatarFacade.total_characters_by_affiliation_count(params[:nation])
   end
 end

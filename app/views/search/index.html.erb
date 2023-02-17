@@ -1,0 +1,39 @@
+<h1><%= @affiliation %></h1>
+
+<p>Total Number of People: <%= @characters.count %></p>
+
+<h4>First 25 Members of the <%= @affiliation %></h4>
+<ol>
+  
+  <% @characters.first(25).each do |character| %>
+    <li class='citizen' id="member-<%= character.id %>">
+      <strong><%= character.name %></strong> <br>
+      <%= image_tag character.photo_url unless character.photo_url.nil?%> <br>
+      <u>Allies</u> <br>
+      <% if character.allies == "None" %>
+        <%= character.allies %> <br>
+      <% else %>
+        <% character.allies.each do |ally| %>
+          <ul>
+            <li><%= ally %></li>
+          </ul>
+        <% end %>
+      <% end %>
+      <u>Enemies</u> <br>
+      <% if character.enemies == "None" %>
+        <%= character.enemies %> <br>
+      <% else %>
+        <% character.enemies.each do |enemy| %>
+          <ul>
+            <li><%= enemy %></li>
+          </ul>
+        <% end %>
+      <% end %>
+      <u>Affiliations</u> <br>
+      <%= character.affiliation %>
+
+    </li> <br>
+  <% end %>
+  
+
+</ol>
