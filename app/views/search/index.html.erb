@@ -1,0 +1,36 @@
+<h2><%= @nation %></h2>
+<h4>Character Count: <%= @nation_character_count %></h4>
+<h4>Characters: </h4>
+<% @characters.each do |character| %>
+  <div id="character_<%= character.id %>">
+    <% if character.image %>
+      <%= image_tag(character.image) %><br>
+    <% end %>
+    <%= character.name %><br>
+    <% unless character.enemies == [] %>
+      Enemies: <% character.enemies.each_with_index do |enemy, i| %>
+        <% unless i == character.enemies.length - 1 %>
+          <%= enemy %>,
+        <% else %>
+          <%= enemy %>
+        <% end %>
+      <% end %><br>
+    <% else %>
+      Enemies: None
+    <% end %>
+
+    <% unless character.allies == [] %>
+      Allies: <% character.allies.each_with_index do |ally, i| %>
+        <% unless i == character.allies.length - 1 %>
+          <%= ally %>,
+        <% else %>
+          <%= ally %>
+        <% end %>
+      <% end %><br>
+    <% else %>
+      Allies: None
+    <% end %>
+
+    Affiliation: <%= character.affiliation %>
+  </div>
+<% end %><br>

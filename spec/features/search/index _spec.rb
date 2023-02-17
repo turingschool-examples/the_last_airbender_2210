@@ -18,7 +18,7 @@ RSpec.describe 'Search Index' do
       expect(page).to have_content('Allies: Fire Nation')
       expect(page).to have_content('Afiko')
       expect(page).to have_content('Enemies: Aang')
-      expect(page).to have_content('Affiliations: Fire Nation')
+      expect(page).to have_content('Affiliation: Fire Nation')
       expect(page.find('img')[:src]).to eq("https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128")
     end
 
@@ -26,7 +26,7 @@ RSpec.describe 'Search Index' do
       expect(page).to have_content('Allies: None')
       expect(page).to have_content('Ember Island Players')
       expect(page).to have_content('Enemies: None')
-      expect(page).to have_content('Affiliations: Fire Nation')
+      expect(page).to have_content('Affiliation: Fire Nation')
       expect(page.find('img')[:src]).to eq("https://vignette.wikia.nocookie.net/avatar/images/1/16/Ember_Island_Players.png/revision/latest?cb=20130722113209")
     end
   end

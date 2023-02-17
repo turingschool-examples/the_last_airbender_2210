@@ -7,6 +7,14 @@ class AirBenderService
     JSON.parse(nation_characters_response(nation).body, symbolize_names: true)
   end
 
+  def self.parse_nation_character_count_response(nation)
+    JSON.parse(nation_character_count_response(nation).body, symbolize_names: true)
+  end
+
+  def self.nation_character_count_response(nation)
+    connection.get("?affiliation=#{nation}&perPage=500&page=1")
+  end
+
   def self.nation_characters_response(nation)
     connection.get("?affiliation=#{nation}&perPage=25&page=1")
   end
