@@ -1,3 +1,26 @@
 <h1>Nation Members</h1>
 
-Total Members: 
+Total Members: <%= @members_count %>
+
+<h2>The first 25 members:</h2>
+
+<% @members.each do |member| %>
+  <h3><%= member.name %></h3>
+  <img src=<%= member.photo %> ><br>
+  <p>Allies: <% if member.allies.any? %></p>
+    <% member.allies.each do |ally| %>
+      <%= ally %>
+    <% end %>
+  <% else %>
+    None
+  <% end %>
+    <p>Enemies: <% if member.enemies.any? %></p>
+    <% member.enemies.each do |enemy| %>
+      <%= enemy %>
+    <% end %>
+  <% else %>
+    None
+  <% end %>
+  <p>Affiliations: <%= member.affiliation %></p>
+<% end %>
+
