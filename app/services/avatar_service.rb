@@ -4,7 +4,7 @@ class AvatarService
   end
 
   def self.members_of(nation)
-    response = conn.get("/api/v1/characters?affiliation=#{nation}")
+    response = conn.get("/api/v1/characters?perPage=200&affiliation=#{nation}")
     parse(response)
   end
 

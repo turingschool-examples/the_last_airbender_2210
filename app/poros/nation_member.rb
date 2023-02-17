@@ -5,7 +5,7 @@ class NationMember
     @name = data[:name]
     @allies = data[:allies]
     @enemies = data[:enemies]
-    @photo_url = data[:photo_url]
+    @photo_url = data[:photoUrl]
     @affiliation = data[:affiliation]
   end
 end
