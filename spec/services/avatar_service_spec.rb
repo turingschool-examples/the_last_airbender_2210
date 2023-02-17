@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe AvatarService do
   it 'can return all avatar member objects' do
-    avatar_members = AvatarService.avatar_members
+    avatar_members = AvatarService.avatar_members("Fire+Nation")
 
     expect(avatar_members).to be_a(Array)
     expect(avatar_members.first).to have_key(:_id)

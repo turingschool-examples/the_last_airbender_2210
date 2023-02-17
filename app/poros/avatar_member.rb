@@ -2,15 +2,17 @@ class AvatarMember
 
   attr_reader :id,
               :name,
-              :description,
-              :unit_price,
-              :merchant_id
+              :affiliations,
+              :enemies,
+              :allies,
+              :photo_url
 
   def initialize(data)
     @id          = data[:_id]
     @name        = data[:name]
-    @affiliation = data[:affiliation]
+    @affiliations = data[:affiliation]
     @enemies     = data[:enemies]
+    @allies      = data[:allies]
     @photo_url   = data[:photoUrl]
   end
 end

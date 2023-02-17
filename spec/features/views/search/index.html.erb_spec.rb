@@ -18,5 +18,25 @@ And for each of the members I should see:
 require 'rails_helper'
 
 RSpec.describe 'Search Index' do
-  
+  before(:each) do
+    visit root_path
+    select("Fire Nation", from: "nation")
+    click_button("Search For Members")
+  end
+
+  it 'displays title' do
+    expect(page).to have_content('Search Results')
+  end
+
+  it 'lists members of nation selected' do
+    expect(page).to have_content("Afiko")
+    expect(page).to have_content("Azulon")
+    expect(page).to have_content("Chan")
+    within("#member-id-5cf5679a915ecad153ab68da") do
+      expect(page).to have_content("Azula")
+      expect(page).to have_content("Ozai")
+      expect(page).to have_content("Iroh")
+      expect(page).to have_content("Azula's team")
+    end
+  end
 end

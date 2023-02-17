@@ -1,6 +1,6 @@
 class AvatarMemberFacade
-  def self.all
-    AvatarService.avatar_members.map do |member|
+  def self.all(nation)
+    AvatarService.avatar_members(nation).map do |member|
       AvatarMember.new(member)
     end
   end

@@ -1,1 +1,25 @@
 <h1>Search Results</h1>
+
+<% @nation_members.each do |member| %>
+  <div id=<%= "member-id-#{member.id}" %>>
+    <% if member.photo_url %>
+      <br><%= image_tag (member.photo_url) %><br/>
+    <% end %>
+    <%= "Name: #{member.name}" %><br>
+    <% unless member.allies.empty? %>
+      <%= "Allies: #{member.allies}" %><br>
+    <% else %>
+      Allies: None<br>
+    <% end %>
+    <% unless member.enemies.empty? %>
+      <%= "Enemies: #{member.enemies}" %><br>
+    <% else %>
+      Enemies: None<br>
+    <% end %>
+    <% unless member.affiliations.empty? %>
+      <%= "Affiliations: #{member.affiliations}" %>
+    <% else %>
+      Affiliations: None<br>
+    <% end %>
+  <div>
+<% end %>
