@@ -1,6 +1,7 @@
 <h1>Search Results</h1>
+<h4>Total Members: <%= @results.count %> </h4>
 
-<% @results.each do |member| %>
+<% @results[0..25].each do |member| %>
   <p>Name: <%= member.name %></p>
   <img src=<%= member.photo %> style="width:150px;height:150;">
   <p>Allies: 
@@ -13,6 +14,7 @@
       <%= enemy %>, 
     <% end %>
   </p>
+  <p>Affiliation: <%= member.affiliation %></p>
   <br>
 
 <% end %>

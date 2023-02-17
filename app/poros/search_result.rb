@@ -4,7 +4,8 @@ class SearchResult
               :allies,
               :enemies,
               :photo,
-              :id
+              :id,
+              :affiliation
 
   def initialize(data)
     @id = data[:_id]
@@ -18,5 +19,6 @@ class SearchResult
       @enemies = ["none"]
     end
     @photo = data[:photoUrl]
+    @affiliation = data[:affiliation]
   end
 end
