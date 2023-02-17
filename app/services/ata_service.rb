@@ -4,7 +4,7 @@ class ATAService
   end
 
   def self.get_members_by_affiliation(nation)
-    response = conn.get("characters", affiliation: nation)
+    response = conn.get("characters", {affiliation: nation, perPage: 500})
     JSON.parse(response.body, symbolize_names: true)
   end
 end

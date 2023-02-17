@@ -4,8 +4,9 @@ RSpec.describe "Search index" do
   describe "when visiting search after selecting a nation from '/'" do
     it 'user sees total number of people in the fire nation' do
       visit '/'
-      select 'Fire Nation', from: :nation
-      click_button "Search for Members"
+
+      select "Fire Nation", from: :nation
+      click_button("Search For Members")
 
       expect(page).to have_content("Fire Nation")
       expect(page).to have_content("Number of members: ")
