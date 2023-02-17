@@ -1,0 +1,17 @@
+<h1><%= @nation  %>'s Member Page</h1>
+
+<h3>There are <%= @member_total_count %> members</h3>
+
+<% @first_25_members.each do |member| %>
+  <div class=member id='member-<%= member.name %>'>
+    <p>Name: <%= member.name %></p>
+    <% if member.photo %>
+      <p>Photo: <%= image_tag member.photo %></p>
+    <% else %>
+      <p>Photo: None</p>
+    <% end %>
+    <p>Allies: <%= member.allies %></p>
+    <p>Enemies: <%= member.enemies %></p>
+    <p>Affiliations: <%= member.affiliation %></p>
+  </div>
+<% end %>

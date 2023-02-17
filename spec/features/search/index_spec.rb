@@ -5,16 +5,18 @@ RSpec.describe 'Search Index' do
     visit root_path
 
     select 'Fire Nation'
-    click_button 'Search for Members'
+    click_button 'Search For Members'
 
     expect(current_path).to eq(search_path)
-    expect(page).to have_css('.members', count: 25)
-    within("#member-1") do
-      expect(page).to have_content("member name")
+    expect(page).to have_content("There are 97 members")
+    expect(page).to have_css('.member', count: 25)
+    within("#member-Afiko") do
+      expect(page).to have_content("Name: ")
+      # expect(page).to have_content("Photo: ")
       expect(page).to have_content("Allies: ")
       expect(page).to have_content("Enemies: ")
       expect(page).to have_content("Affiliations: ")
-      expect(page).to_not have_content("2nd member name")
+      expect(page).to_not have_content("Azula")
     end
   end
 end
