@@ -1,12 +1,16 @@
 <h1><%= @nation %> Members </h1>
 <h3>There are <%= @total_members %> Total Members of <%= @nation %> </h2>
 <p> <% @member_list.each do |member| %> </p>
-      <p> Name: <%= member[:name] %> </p>
-      <% if member[:allies] == [] %>
-        <p> Allies: None </p>
-      <% else %>
-        <p> Allies: <%= member[:allies] %> </p>
-      <% end %>
-      <p> Enemies: <%= member[:enemies] %>
-      <br><br>
+  <p> Name: <%= member[:name] %> </p>
+    <% if member[:allies] == [] %>
+      <p> Allies: None </p>
+    <% else %>
+      <p> Allies: <%= member[:allies] %> </p>
     <% end %>
+  <% if member[:enemies] == [] %>
+      <p> Enemies: None </p>
+    <% else %>
+      <p> Enemies: <%= member[:enemies] %> </p>
+    <% end %>
+  <br>
+<% end %>
