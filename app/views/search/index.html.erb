@@ -4,20 +4,21 @@
 
 <% @members.each do |member| %>
   <section class="members">
+    <img src=<%= member[:photoUrl] %>>
     <p class="name">
-      <%= member[:name] %>
+      Name: <%= member[:name] %>
     </p>
 
     <p class="allies">
-      <%= member[:allies] %>
+      Allies: <%= member[:allies] %>
     </p>
 
     <p class="enemies">
-      <%= member[:enemies] %>
+      Enemies: <%= member[:enemies] %>
     </p>
 
     <p class="affiliations">
-      <%= member[:affiliations] %>
+      Affiliations: <%= member[:affiliations] %>
     </p>
   </section>
 <% end %>
