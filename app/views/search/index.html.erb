@@ -1,0 +1,25 @@
+<h3><%= "Total number of people in the #{@searched_nation}: #{@members.count}" %></h3>
+
+<% @members.each do |member| %>
+  <section class="member">
+    <p class="name">
+      Name: <b><%= member.name %></b>
+    </p>
+    <p class="photo">
+      Photo: <%= member.photo %>
+    </p>
+    <p class="allies">
+      Allies: <% member.allies.each do |ally| %>
+        <%= ally %>
+      <% end %>
+    </p>
+    <p class="enemies">
+      Enemies: <% member.enemies.each do |enemy| %>
+        <%= enemy %>
+      <% end %>
+    </p>
+    <p class="affiliation">
+      Affiliation: <%= member.affiliation %>
+    </p>
+  </section>
+<% end %>
