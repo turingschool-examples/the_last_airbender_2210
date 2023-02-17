@@ -13,13 +13,16 @@ RSpec.describe 'search page' do
     expect(current_path).to eq(search_path)
   end
 
-  it 'should list the total count of members in the fire nation' do
+  it 'returns population of the nation, 25 characters with their name, image, allies, enemies, and affiliation' do
     visit root_path
 
     select 'Fire Nation', from: :nation
     click_on 'Search For Members'
 
     expect(page).to have_content('Population of Fire nation: 97')
+    expect(page).to have_css('.character', count: 25)
+    expect(page).to have_content('Name: Afiko Allies: Fire Nation Enemies: Aang Affiliation: Fire Nation')
+    expect(page).to have_css("img[src*='https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128']")
   end
 end
 
