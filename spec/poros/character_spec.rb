@@ -22,6 +22,7 @@ RSpec.describe Character do
     expect(character.image).to eq("https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128")
     expect(character.allies).to eq("Fire Nation")
     expect(character.enemies).to eq("Aang")
+    expect(character.affiliation).to eq("Fire Nation")
 
     expect(character.allies_check).to eq("Fire Nation")
     expect(character.enemies_check).to eq("Aang")
