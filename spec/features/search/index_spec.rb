@@ -3,7 +3,12 @@ require 'rails_helper'
 RSpec.describe "Search index" do
   describe "when visiting search after selecting a nation from '/'" do
     it 'user sees total number of people in the fire nation' do
+      visit '/'
+      select 'Fire Nation', from: :nation
+      click_button "Search for Members"
 
+      expect(page).to have_content("Fire Nation")
+      expect(page).to have_content("Number of members: ")
     end
 
     xit 'user sees a list of the top 25 members of the nation' do
