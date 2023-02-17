@@ -12,7 +12,7 @@ RSpec.describe "Nation Search", type: :feature do
     expect(page).to have_content("Total Number of fire+nation's members is 1")
 
     # expect(page).to have_css('.member', count: 25)
-   
+   ### not working due to parsing issue###
     within(first('.member')) do
       expect(page).to have_css('.name')
       expect(page).to have_css('.allies')
