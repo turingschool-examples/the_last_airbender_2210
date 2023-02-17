@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe NationFascade do
   describe '#get_all_nation_members' do
     it 'returns a list of all nation members' do
-      nation = NationFascade.get_all_nation_members
+      search_term = 'fire nation'
+
+      nation = NationFascade.get_all_nation_members(search_term)
 
       expect(nation).to be_an(Array)
 
