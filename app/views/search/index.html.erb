@@ -1,0 +1,10 @@
+<h1>Search Results for <%= @query %></h1>
+
+<% @members.each do |member| %>
+  <%= member.name %>
+  <%= member.photo_url %>
+  <%= member.allies %>
+  <%= member.enemies %>
+  <%= member.affiliation %>
+<% end %>
+
