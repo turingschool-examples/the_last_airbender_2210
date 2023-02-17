@@ -6,6 +6,10 @@ Number of members: <%= @members.count %><br>
   <%= "##{i}: #{m[:name]}"%><br>
   <% if i <= 20 %>
     <img src=<%=m[:photoUrl]%> alt=<%=m[:name]%>><br>
+    Allies:
+    <% m[:allies].each do |a| %>
+      <%= a %>
+    <% end %><br>
     Enemies:
     <% m[:enemies].each do |e| %>
       <%= e %>
