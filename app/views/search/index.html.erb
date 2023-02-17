@@ -1,0 +1,18 @@
+<h1>Search Results</h1>
+
+<% @results.each do |member| %>
+  <p>Name: <%= member.name %></p>
+  <img src=<%= member.photo %> style="width:150px;height:150;">
+  <p>Allies: 
+    <% member.allies.each do |ally| %>
+      <%= ally %>, 
+    <% end %>
+  </p>
+  <p>Enemies: 
+    <% member.enemies.each do |enemy| %>
+      <%= enemy %>, 
+    <% end %>
+  </p>
+  <br>
+
+<% end %>
