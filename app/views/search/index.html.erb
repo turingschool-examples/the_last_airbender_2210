@@ -1,27 +1,38 @@
-
-<ul style="list-style: none;">
-   <%  @nation_details.each do |character| %>
-
-   <li> Member Name: <%= character.name %> </li>
-    <li> Allies: <% if character.allies.empty? %>
-                    <i> None </i> 
-                    <% else %>
-                    <%= character.allies.join(', ') %>
-                    <% end %> 
-    </li>
-    <li> Enemies: <% if character.enemies.empty? %>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <p class ="navbar-brand">The Four Nations</p>
+            <p class="subtitle">Members of the Nation</p>
+        </div>
+    </nav>
+    <br>
+    <ul style="list-style: none;">
+        <%  @nation_details.each do |character| %>
+    <li><h2 style="font-size: 100;font-family:courier; text-align:center; color: MAROON"><strong> Member Name: <%= character.name %> </strong></h2></li>
+        <li><h4 style="font-size: 100;font-family:courier; text-align:center"> 
+        <u style="color: NAVY">Allies</u> <% if character.allies.empty? %>
                         <i> None </i> 
-                    <% else %>
-                    <%= character.enemies.join(', ') %>
-                    <% end %> 
-    </li>
-    <li> Affiliations: <%= character.affiliation %> </li>
-   <li> <% if character.photo %>
-            <%= image_tag character.photo, width: 90 %></li>
-        <% else %>
-        <i> no image available </i>
+                        <% else %>
+                        <%= character.allies.join(', ') %>
+                        <% end %> &nbsp &nbsp &nbsp &nbsp
+         <u style="color: DarkMagenta">Enemies</u> <% if character.enemies.empty? %>
+                            <i> None </i> 
+                        <% else %>
+                        <%= character.enemies.join(', ') %>
+                        <% end %></h4></li>
+        <li><h4 style="font-size: 100;font-family:courier; text-align:center">
+         Affiliations: <%= character.affiliation %> </li>
+        <li><h4 style="font-size: 50;font-family:courier; text-align:center">
+         <% if character.photo %>
+                <%= image_tag character.photo, width: 155 %></li>
+            <% else %>
+                <i> no image available </i>
+            <% end %></h4></li>
+        <hr>
+        
         <% end %>
-    <hr>
-    
-    <% end %>
-</ul>
+    </ul>
+
+<div style="position:fixed; padding: 1em; bottom: 0; right: 0;">
+    <%= link_to 'home', root_path%>
+</div>
