@@ -3,23 +3,25 @@
    <%  @nation_details.each do |character| %>
 
    <li> Member Name: <%= character.name %> </li>
-   <li>  (and their photo, if they have one)  
-    
-                              </li>
-    <li> Allies: <% if character.allies.count == nil %>
-                        None
+    <li> Allies: <% if character.allies.empty? %>
+                    <i> None </i> 
                     <% else %>
                     <%= character.allies.join(', ') %>
-                    <% end %> </li>
-    <li> Enemies: <% if character.enemies.count == nil %>
-                        None
+                    <% end %> 
+    </li>
+    <li> Enemies: <% if character.enemies.empty? %>
+                        <i> None </i> 
                     <% else %>
                     <%= character.enemies.join(', ') %>
-                    <% end %> </li>
-    
+                    <% end %> 
     </li>
     <li> Affiliations: <%= character.affiliation %> </li>
-    <br>
+   <li> <% if character.photo %>
+            <%= image_tag character.photo, width: 90 %></li>
+        <% else %>
+        <i> no image available </i>
+        <% end %>
+    <hr>
     
     <% end %>
 </ul>
